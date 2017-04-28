@@ -27,8 +27,60 @@ body input:required:valid,
 body textarea:required:valid
 	color: #666
 
-//Custom Styles Here
+body,
+html
+	margin: 0
+	padding: 0
 
+//Custom Styles Here
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: "Montserrat", sans-serif
+	overflow-x: hidden
+	font-weight: 300
+
+.hidden
+	display: none
+
+
+.container
+	max-width: 1520px
+	margin: 0 auto
+
+// HEADER
+
+.header
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	.container
+		> *
+			display: inline-block
+	.main_menu
+		ul
+			list-style-type: none
+			margin: 0
+			padding: 0
+			li
+				float: left
+				padding: 0 5px
+				margin: 0 20px
+				&:first-child
+					margin-left: 0
+				&:last-child
+					margin-right: 0
+				a
+					font-size: 16px
+					color: #fff
+					text-decoration: none
+					text-transform: uppercase
+
+
+@import "pages/home"
 
 //ALWAYS END
 @import "media"
