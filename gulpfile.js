@@ -36,6 +36,7 @@ gulp.task('scripts', function() {
 		'./app/libs/animate/animate-css.js',
 		'./app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
 		'./app/libs/gmap3/dist/gmap3.min.js',
+		'./app/libs/fullpage.js/dist/jquery.fullpage.min.js',
 		])
 		.pipe(concat('libs.js'))
 		// .pipe(uglify()) //Minify libs.js
