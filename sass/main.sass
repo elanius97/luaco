@@ -37,7 +37,7 @@ body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.6
+	line-height: 1.2
 	font-family: "Montserrat", sans-serif
 	overflow-x: hidden
 	font-weight: 300
@@ -49,6 +49,16 @@ body
 .container
 	max-width: 1520px
 	margin: 0 auto
+	padding: 0 15px
+
+a
+	transition: all .15s linear
+
+.discover
+	padding: 20px 40px
+	color: #fff
+	text-decoration: none
+	box-shadow: 0px 2px 0 1px #f5b34d, 0px -2px 0 1px #65c4d7, -2px 0px 0 1px #77afe3, 2px 0px 0 1px #77afe3
 
 // HEADER
 
@@ -57,28 +67,102 @@ body
 	top: 0
 	left: 0
 	width: 100%
+	padding-top: 3%
+	z-index: 2
+	ul
+		list-style-type: none
+		margin: 0
+		padding: 0
 	.container
 		> *
 			display: inline-block
+			vertical-align: bottom
 	.main_menu
-		ul
-			list-style-type: none
-			margin: 0
-			padding: 0
-			li
-				float: left
-				padding: 0 5px
-				margin: 0 20px
-				&:first-child
-					margin-left: 0
-				&:last-child
-					margin-right: 0
+		margin-right: 5%
+		li
+			float: left
+			margin: 0 20px
+			&:first-child
+				margin-left: 0
+			&:last-child
+				margin-right: 0
+			a
+				font-size: 16px
+				color: #fff
+				text-decoration: none
+				text-transform: uppercase
+				display: block
+				padding: 0 5px 12px
+				position: relative
+				&:after
+					content: ''
+					position: absolute
+					bottom: 0
+					left: 50%
+					width: 0
+					height: 1px
+					background: #ff4500
+					transition: all .3s ease-in-out
+				&:hover
+					&:after
+						left: 0
+						width: 100%
+			&.active
 				a
-					font-size: 16px
-					color: #fff
-					text-decoration: none
-					text-transform: uppercase
-
+					font-weight: 900
+					&:after
+						left: 0
+						width: 100%
+	&_logo
+		margin-right: 10%
+	&_social
+		margin-right: 2%
+		li
+			float: left
+			margin: 0 10px
+			&:first-child
+				margin-left: 0
+			&:last-child
+				margin-right: 0
+			a
+				color: #fff
+				font-size: 20px
+				&:hover
+					color: #fa4c06
+	&_language
+		padding-bottom: 3px
+		position: relative
+		padding-right: 20px
+		cursor: pointer
+		&:after
+			content: '\f078'
+			font-family: FontAwesome
+			position: absolute
+			right: 0
+			top: 4px
+			color: #fff
+			font-size: 10px
+			line-height: 16px
+		li
+			display: none
+			position: absolute
+			top: 100%
+			left: 0
+			&:nth-child(2)
+				top: 100%
+			&:nth-child(3)
+				top: calc(100% + 25px)
+			&.active
+				display: block
+				position: static
+			a
+				font-size: 16px
+				color: #fff
+				text-decoration: none
+				line-height: 1
+		&.open
+			&:after
+				content: '\f077'
 
 @import "pages/home"
 
