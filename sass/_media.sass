@@ -1,19 +1,96 @@
 @import "bourbon"
 
 /*==========  Desktop First Method  ==========*/
+@media only screen and (max-height : 700px)
+	.number_one
+		.left_image
+			width: 500px
+			left: -400px
+			bottom: 0
+			top: auto
+			img
+				width: 100%
+		.right_image
+			width: 450px
+			bottom: 0
+			right: -350px
+			img
+				width: 100%
+		.text
+			h1
+				font-size: 100px
+				span
+					font-size: 48px
+			p
+				margin-bottom: 25px
+
+	.our_liquer
+		padding-top: 150px
+		.text
+			max-width: 750px
+			.image
+				width: 550px
+				left: -450px
+				img
+					width: 100%
+
+	.secret_coffee
+		padding-top: 100px
+		.text
+			max-width: 100%
+			h2
+				br
+					display: none
+
+@media only screen and (max-width : 1450px)
+	.header
+		padding-top: 12px
+		.header_desktop
+			.main_menu
+				margin-right: 3%
+			.header_logo
+				margin-right: 4%
+				width: 150px
+				img
+					width: 100%
+			.header_language
+				margin-right: 3%
+
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
 	/**/
+	.header
+		position: static
+		padding-top: 0
+		.header_desktop
+			display: none
+		.header_mobile
+			display: block
+			&_visible
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				padding-top: 12px
+				z-index: 1
+		.header_language
+			li
+				&:nth-child(2)
+					top: calc(100% + 10px)
 
+@media only screen and (max-width : 1024px)
+	.number_one
+		padding-top: 90px
+		padding-bottom: 20px
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
+@media only screen and (max-width : 991px)
 	/**/
 
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
+@media only screen and (max-width : 767px)
 	
 	/*Disable Animation on Mobile Devices*/
 	.animated
@@ -36,6 +113,89 @@
 		-ms-animation: none !important
 		animation: none !important
 
+	.discover
+		font-size: 14px
+
+	.number_one
+		.left_image
+			width: 320px
+			margin: 0 auto
+			position: static
+			img
+				width: 100%
+		.right_image
+			display: none
+		.text
+			h1
+				font-size: 35px
+				line-height: 28px
+				span
+					font-size: 31px
+					display: inline
+					br
+						display: none
+			p
+				margin-bottom: 44px
+				font-size: 12px
+				line-height: 18px
+			.discover
+				max-width: 290px
+				text-align: center
+				width: 100%
+				box-sizing: border-box
+
+	.footer
+		display: block
+
+	.our_liquer
+		overflow: hidden
+		padding-bottom: 35px
+		padding-top: 100px
+		background-size: 700px
+		background-repeat: no-repeat
+		background-position: top center
+		background-color: #000
+		.text
+			max-width: 100%
+			.image
+				display: none
+			h2
+				font-size: 40px
+				overflow: hidden
+				position: relative
+				text-align: right
+				line-height: 1
+				span
+					position: absolute
+					right: 125px
+					top: 50%
+					transform: translateY(-50%)
+				img
+					display: inline-block
+					width: 300px
+					vertical-align: middle
+					margin-right: -100px
+			p
+				text-align: left
+				font-size: 13px
+				line-height: 25px
+
+	.secret_coffee
+		padding-top: 75px
+		padding-bottom: 60px
+		.text
+			h2
+				font-size: 38px
+				line-height: 1
+				margin-bottom: 5px
+				margin-top: 0
+			.subtitle
+				font-size: 21px
+				margin-bottom: 25px
+			p
+				font-size: 13px
+				line-height: 25px
+
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -45,31 +205,3 @@
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/
-
-
-/*==========  Mobile First Method  ==========*/
-
-/* Custom, iPhone Retina */
-@media only screen and (min-width : 320px)
-	/**/
-
-
-/* Extra Small Devices, Phones */
-@media only screen and (min-width : 480px)
-	/**/
-
-
-/* Small Devices, Tablets */
-@media only screen and (min-width : 768px)
-	/**/
-
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px)
-	/**/
-
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px)
-	/**/
-
