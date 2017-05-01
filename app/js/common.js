@@ -1,4 +1,5 @@
 $(function() {
+	gmapDiv = $(".map");
 	var $menu = $(".header");
     var $menuHeight = $menu.innerHeight;
 
@@ -37,7 +38,9 @@ $(function() {
 
 	$(".video_section .video_play_wrap_in a").on("click", function(){
 		$(".video_section .video_wrapper iframe")[0].src += "&autoplay=1";
-		$(".video_section .video_wrapper").fadeIn(300);
+		setTimeout(function(){
+			$(".video_section .video_wrapper").fadeIn(300)
+		}, 250);
 	});
 
 	$(".header_mobile .menu_open").on("click", function(){
@@ -72,39 +75,43 @@ $(function() {
 		}	
     });
 
-    $(".map").gmap3({
-    	address:"Unit 747, 7/f, Star house, 3 Salisbury Road, Tsim Sha Kowloon, Hong Kong",
-    	zoom: 10,
-    	mapTypeId: "shadeOfGrey", // to select it directly
-        mapTypeControlOptions: {
-          mapTypeIds: [google.maps.MapTypeId.ROADMAP, "shadeOfGrey"]
-        },
-        mapTypeControl: false,
-        navigationControl: false,
-        scrollwheel: true,
-        streetViewControl: false
-  	})
-  	.styledmaptype(
-        "shadeOfGrey",
-        [
-          {"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},
-          {"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},
-          {"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
-          {"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},
-          {"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},
-          {"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},
-          {"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},
-          {"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},
-          {"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},
-          {"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},
-          {"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},
-          {"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},
-          {"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}
-        ],
-        {name: "Shades of Grey"}
-  	)
-  	.marker([
-    	{address:"Unit 747, 7/f, Star house, 3 Salisbury Road, Tsim Sha Kowloon, Hong Kong", icon: 'img/map.png'},
-	]);
+    if(gmapDiv.length) {
+    	$(".map").gmap3({
+	    	address:"Unit 747, 7/f, Star house, 3 Salisbury Road, Tsim Sha Kowloon, Hong Kong",
+	    	zoom: 10,
+	    	mapTypeId: "shadeOfGrey", // to select it directly
+	        mapTypeControlOptions: {
+	          mapTypeIds: [google.maps.MapTypeId.ROADMAP, "shadeOfGrey"]
+	        },
+	        mapTypeControl: false,
+	        navigationControl: false,
+	        scrollwheel: true,
+	        streetViewControl: false
+	  	})
+	  	.styledmaptype(
+	        "shadeOfGrey",
+	        [
+	          {"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},
+	          {"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},
+	          {"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+	          {"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},
+	          {"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},
+	          {"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},
+	          {"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},
+	          {"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},
+	          {"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},
+	          {"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},
+	          {"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},
+	          {"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},
+	          {"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}
+	        ],
+	        {name: "Shades of Grey"}
+	  	)
+	  	.marker([
+	    	{address:"Unit 747, 7/f, Star house, 3 Salisbury Road, Tsim Sha Kowloon, Hong Kong", icon: 'img/map.png'},
+		]);
+    }
+
+	    
 
 });
