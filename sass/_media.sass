@@ -67,6 +67,12 @@
 			&:nth-child(2n)
 				border-right: none
 
+	.contact
+		.adresses
+			&_item
+				flex: 50%
+				&:nth-child(2n)
+					border-right: none
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
@@ -327,6 +333,32 @@
 			display: none
 			font-size: 14px
 			line-height: 21px
+
+	.contact
+		padding-top: 80px
+		background-attachment: scroll
+		background-size: 700px
+		background-repeat: no-repeat
+		background-position: top center
+		.breadcrumbs
+			margin-bottom: 65px
+		h1
+			font-size: 38px
+			margin-bottom: 0
+			margin-bottom: 10px
+		.subtitle
+			font-size: 13px
+			padding: 6px 0
+			margin-bottom: 35px
+		.adresses
+			&_item
+				flex: 100%
+				border-right: none
+				margin-bottom: 0
+				padding: 20px 0 25px
+				border-bottom: 1px solid rgba(255,255,255,.2)
+				&:last-child
+					border-bottom: none
 
 
 /* Extra Small Devices, Phones */

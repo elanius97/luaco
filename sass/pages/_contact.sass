@@ -1,0 +1,86 @@
+.contact
+	background: url("../img/contact_bg.jpg") no-repeat center center / cover
+	padding-top: 14%
+	text-align: center
+	h1
+		font-size: 114px
+		text-transform: uppercase
+		font-family: "ahronbd"
+		margin: 0 0 45px
+		line-height: 1
+	.subtitle
+		font-family: "Bronzetti_Expanded_OT"
+		font-size: 24px
+		line-height: 1
+		padding-top: 12px
+		padding-bottom: 12px
+		color: #f5b34d
+		text-shadow: 2px 0 0 #000
+		text-transform: uppercase
+		margin-bottom: 45px
+		position: relative
+		margin: 0 0 50px
+		&:after,
+		&:before
+			content: ''
+			position: absolute
+			left: 50%
+			transform: translateX(-50%)
+			max-width: 507px
+			width: 100%
+			height: 4px
+			background-size: contain
+			background-position: center center
+			background-repeat: no-repeat
+		&:before
+			background-image: url("../img/contact_sb_top.png")
+			top: 0
+		&:after
+			background-image: url("../img/contact_sb_bottom.png")
+			bottom: 0
+	.adresses
+		&_list
+			text-align: left
+			display: flex
+			flex-wrap: wrap
+		&_item
+			flex: 25%
+			border-right: 1px solid rgba(255,255,255,.2)
+			padding-left: 25px
+			padding-right: 20px
+			box-sizing: border-box
+			margin-bottom: 50px
+			&:nth-child(4n)
+				border-right: none
+			.data
+				overflow: hidden
+				margin-top: 10px
+				margin-bottom: 10px
+				p
+					margin: 0				
+				.title
+					color: rgba(255,255,255,.5)
+					line-height: 18px
+					margin-right: 15px
+					width: 86px
+					float: left
+					span
+						display: inline-block
+						width: 50px
+						margin-right: 15px
+						font-size: 11px
+					i
+						font-size: 18px
+						display: inline-block
+						vertical-align: middle
+				.text
+					font-size: 15px
+					color: #fff
+					overflow: hidden
+					a
+						color: #fff
+						&[href*=mailto]
+							color: #fa4c06
+	.map
+		height: 295px
+		border-top: 6px solid #fa4c06
