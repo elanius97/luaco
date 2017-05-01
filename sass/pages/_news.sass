@@ -1,0 +1,75 @@
+.news
+	background: url("../img/news_bg.jpg") no-repeat center center / cover
+	background-attachment: fixed
+	padding-top: 14%
+	&_item
+		max-width: 1150px
+		margin: 0 auto
+		overflow: hidden
+		color: #fff
+		margin-bottom: 150px
+		&:last-child
+			margin-bottom: 0
+		.image_desktop
+			overflow: hidden
+			margin-bottom: 55px
+	&_header
+		.image
+			display: none
+			float: left
+		&_info
+			h3
+				font-size: 36px
+				text-transform: uppercase
+				margin: 0 0 15px
+				line-height: 1
+			.date,
+			.date_mobile
+				color: #ff4500
+				font-size: 18px
+				margin: 0 0 25px
+				text-transform: uppercase
+			.date_mobile
+				display: none
+				font-size: 10px
+	&_text
+		font-size: 18px
+		line-height: 32px
+	.gallery
+		.main_image
+			float: left
+			max-width: 818px
+			img
+				max-width: 100%
+		&_images
+			float: right
+			background: rgba(255,255,255,.05)
+			overflow: hidden
+			padding: 40px 25px 33px
+			width: 265px
+			box-sizing: border-box
+			.image
+				float: left
+				margin-right: 7px
+				margin-bottom: 7px
+				position: relative
+				cursor: pointer
+				width: 104px
+				height: 100px
+				background: #1c1c1c
+				&.no_image
+					cursor: default
+				&:before
+					content: ''
+					position: absolute
+					width: calc(100% + 8px)
+					height: calc(100% + 8px)
+					top: -7px
+					left: -7px
+					border: 3px solid #fa4c06
+					opacity: 0
+				&:nth-child(2n)
+					margin-right: 0
+				&.active
+					&:before
+						opacity: 1

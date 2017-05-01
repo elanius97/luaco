@@ -41,6 +41,21 @@ $(function() {
 	});
 
 	
+	$(".gallery_images .image:not(.no_image)").on("click", function(){
+        var image = $(this).children("img").data("image");
+        var parent = $(this).parent();
+        var main_image = parent.siblings(".main_image");
+        main_image.find("img").fadeOut(250, function(){
+            $(this).attr("src", image).fadeIn(250);
+        });
+        parent.find(".image").removeClass("active");
+        $(this).addClass("active");
+    });
 
+    $(".news_header").on("click", function(){
+    	if(window.innerWidth <= 767){
+			$(this).siblings(".news_text").slideToggle(300);
+		}	
+    });
 
 });

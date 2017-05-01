@@ -90,6 +90,21 @@
 				&:nth-child(2)
 					top: calc(100% + 10px)
 
+@media only screen and (max-width : 1140px)
+	.news
+		.gallery
+			.main_image
+				float: none
+				margin: 0 auto 25px
+			&_images
+				width: 100%
+				.image
+					&:nth-child(2n)
+						margin-right: 7px
+					&:last-child
+						margin-right: 0
+
+
 @media only screen and (max-width : 1024px)
 	.number_one
 		padding-top: 90px
@@ -112,6 +127,10 @@
 		&_item
 			.info
 				display: block !important
+
+	.news
+		&_text
+			display: block !important
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -137,6 +156,11 @@
 		-ms-animation: none !important
 		animation: none !important
 
+	.loadmore
+		margin-top: 30px
+		a
+			font-size: 14px
+			
 	.discover
 		font-size: 14px
 
@@ -269,6 +293,40 @@
 				display: none !important
 			.info
 				display: none
+
+	.news
+		background-attachment: scroll
+		background-size: 700px
+		background-repeat: no-repeat
+		background-position: top center
+		background-color: #000
+		padding-top: 80px
+		.breadcrumbs
+			margin-bottom: 30px
+		.image_desktop
+			display: none
+		&_item
+			padding-top: 10px
+			padding-bottom: 15px
+			border-bottom: 1px solid #333333
+			margin: 0
+		&_header
+			overflow: hidden
+			.image
+				display: block
+				margin-right: 20px
+			&_info
+				.date
+					display: none
+				.date_mobile
+					display: block
+					margin-bottom: 0
+				h3
+					font-size: 25px
+		&_text
+			display: none
+			font-size: 14px
+			line-height: 21px
 
 
 /* Extra Small Devices, Phones */
