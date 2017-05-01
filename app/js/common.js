@@ -22,6 +22,7 @@ $(function() {
 	});
 
 	$(".video_section .video_play_wrap_in a").on("click", function(){
+		$(".video_section .video_wrapper iframe")[0].src += "&autoplay=1";
 		$(".video_section .video_wrapper").fadeIn(300);
 	});
 
@@ -32,6 +33,14 @@ $(function() {
 	$(".header_mobile .menu_close").on("click", function(){
 		$(".header_mobile_hidden").fadeOut(300);
 	});
+
+	$(".recepies_header").on("click", function(){
+		if(window.innerWidth <= 767){
+			$(this).siblings(".info").slideToggle(300);
+		}	
+	});
+
+	
 
 
 });
