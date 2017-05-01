@@ -56,6 +56,17 @@
 			.header_language
 				margin-right: 3%
 
+	.recepies
+		&_item
+			flex: 50%
+			&:nth-child(3)
+				&:before
+					display: block
+			&:nth-child(3n)
+				border-right: 1px solid #281818
+			&:nth-child(2n)
+				border-right: none
+
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
@@ -83,6 +94,14 @@
 	.number_one
 		padding-top: 90px
 		padding-bottom: 20px
+
+	.recepies
+		&_item
+			flex: 100%
+			border-right: none !important
+			&:nth-child(2)
+				&:before
+					display: block
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
