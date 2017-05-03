@@ -170,4 +170,42 @@ $(function() {
 		}, 5000);
 	}
 
+	
+
+	function getAge(dateString) {
+      var day = parseInt(dateString.substring(0,2));
+      var month = parseInt(dateString.substring(3,5));
+      var year = parseInt(dateString.substring(6,10));
+
+      var today = new Date();
+      var birthDate = new Date(year, month - 1, day); // 'month - 1' т.к. нумерация месяцев начинается с 0 
+      var age = today.getFullYear() - birthDate.getFullYear();
+      var m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) { 
+          age--;
+      }
+      return age;
+    }
+
+    $(".popup .discover").on("click", function(){
+    	var d = $("#day").val();
+		var m = $("#month").val();
+		var y = $("#year").val();
+		if (y > 0 && y <=17) {
+			y = "20" + y;
+		} else {
+			y = "19" + y;
+		}
+
+		var string = d + "." + m + "." + y;
+
+		var age = getAge(string);
+
+		if (age >= 18) {
+			magnificPopup.close();
+		} else {
+			$(".popup .warning").fadeIn(250);
+		}
+    });
+
 });
