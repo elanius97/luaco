@@ -91,8 +91,12 @@ a
 	top: 0
 	left: 0
 	width: 100%
-	padding-top: 3%
+	padding-top: 50px
+	padding-bottom: 50px
+	transition: background .3s ease-in-out
 	z-index: 10
+	&.scroll
+		background: rgba(255,255,255,.3)
 	ul
 		list-style-type: none
 		margin: 0
@@ -100,13 +104,13 @@ a
 	.container
 		> *
 			display: inline-block
-			vertical-align: bottom
+			vertical-align: middle
 	.header_desktop
 		.main_menu
 			margin-right: 5%
 			li
 				float: left
-				margin: 0 20px
+				margin: 0 26px
 				&:first-child
 					margin-left: 0
 				&:last-child
@@ -298,6 +302,21 @@ a
 		.discover
 			display: inline-block
 
+
+.btn_down
+	width: 40px
+	height: 40px
+	text-align: center
+	line-height: 40px
+	font-size: 10px
+	color: rgba(255,255,255,.5)
+	border: 1px solid rgba(255,255,255,.5)
+	border-radius: 100%
+	display: block
+	&:hover
+		color: rgba(255,255,255,1)
+		border: 1px solid rgba(255,255,255,1)
+
 // FOOTER
 
 .footer
@@ -319,11 +338,15 @@ a
 						color: #fa4c06
 
 // SCREEN
+.section
+	height: 100vh
+
 .screen
 	background-position: center
 	background-size: cover
 	height: 100%
-	padding-top: 14%
+	padding-top: 11%
+	box-sizing: border-box
 
 // BREADCRUMBS
 
@@ -393,6 +416,7 @@ a
 			font-family: "Montserrat", sans-serif
 			font-weight: 300
 			padding-left: 35px
+			border: none
 	.warning
 		display: none
 		margin-bottom: 30px

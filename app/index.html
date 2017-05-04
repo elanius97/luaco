@@ -128,20 +128,59 @@
 							<img src="img/liquer.png" alt="Liquer">
 						</div>
 						<div class="text">
-							<h1>№1 <span>Wild Civet <br>Coffee Cream <br>liqueur</span></h1>
+							<h1><span class="first">№1</span> <span class="second">Wild Civet <br>Coffee Cream <br>liqueur</span></h1>
 							<p>Coffee cream liqueur is our most innovative product  —  and is the first liqueur in the world to feature the rich intensity of wild civet coffee, combined with superior quality cream.</p>
+
+							<a href="javascript:void(0)" class="btn_down"><i class="fa fa-angle-down"></i></a>
+
 							<a href="#" class="discover">Discover More</a>
 						</div>
 						<div class="right_image no_image">
 							<img src="img/glass.png" alt="Glass">
 						</div>
 					</div>
+					<a href="javascript:void(0)" class="btn_down"><i class="fa fa-angle-down"></i></a>
 				</div>
 			</div>
 			<div class="section">
 				<div class="video_section screen" style="background-image: url(img/second.jpg);">
 					<div class="video_wrapper">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/MruIFLxCcws" frameborder="0" allowfullscreen></iframe>
+
+						<div id="player"></div>
+
+						<script>
+						      // 2. This code loads the IFrame Player API code asynchronously.
+						      var tag = document.createElement('script');
+
+						      tag.src = "https://www.youtube.com/iframe_api";
+						      var firstScriptTag = document.getElementsByTagName('script')[0];
+						      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+						      // 3. This function creates an <iframe> (and YouTube player)
+						      //    after the API code downloads.
+						      var player;
+						      function onYouTubeIframeAPIReady() {
+						        player = new YT.Player('player', {
+						          height: '390',
+						          width: '640',
+						          videoId: 'MruIFLxCcws',
+						          playerVars: {
+						          	controls: 0,
+						          	showinfo: 0,
+						          	rel: 0,
+						          },
+						          events: {
+						            'onReady': onPlayerReady
+						          }
+						        });
+						      }
+
+						      // 4. The API will call this function when the video player is ready.
+						      function onPlayerReady(event) {
+						        event.target.playVideo();
+								event.target.mute();
+						      }
+						</script>
 					</div>
 					<div class="video_play_wrap">
 						<div class="video_play_wrap_in">

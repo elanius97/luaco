@@ -14,18 +14,29 @@ $(function() {
 		responsive: 1024,
 		afterLoad: function(anchorLink, index){
 			//using index
-			if(index == 1 && window.location.pathname == "/"){
+			if(index == 1 && ( window.location.pathname == "/" || window.location.pathname == "/index.html" || window.location.pathname == "/index.php") ){
 				$(".header_desktop .discover").css("display", "none");
 			}
 		},
 		onLeave: function(index, nextIndex, direction){
-			if(nextIndex != 1 && window.location.pathname == "/" ){
+			if(nextIndex != 1 && ( window.location.pathname == "/" || window.location.pathname == "/index.html" || window.location.pathname == "/index.php") ){
 				$(".header_desktop .discover").css("display", "inline-block");
 			}
-			else if(index == 2 && direction == 'up' && window.location.pathname == "/" ){
+			else if(index == 2 && direction == 'up' && ( window.location.pathname == "/" || window.location.pathname == "/index.html" || window.location.pathname == "/index.php") ){
 				$(".header_desktop .discover").css("display", "none");
 			}
+
+			if (nextIndex != 1) {
+				$(".header").addClass("scroll");
+			} else if (index == 2) {
+				$(".header").removeClass("scroll");
+			}
 		}
+	});
+
+
+	$(".btn_down").on("click", function(){
+		$.fn.fullpage.moveSectionDown();
 	});
 
 	$(".header_language li.active a").on("click", function(e){
@@ -155,19 +166,18 @@ $(function() {
 	 // Close popup that is currently opened
 
 	if (popupShowed != 'true') {
-		setTimeout(function(){
-			magnificPopup.open({
-				items: {
-					src: '#popup'
-				},
-				type: 'inline',
-				callbacks: {
-					close: function(){
-						setCookie('popupShowed', 'true');
-					}
+		magnificPopup.open({
+			items: {
+				src: '#popup'
+			},
+			closeOnBgClick: false,
+			type: 'inline',
+			callbacks: {
+				close: function(){
+					setCookie('popupShowed', 'true');
 				}
-			});
-		}, 5000);
+			}
+		});
 	}
 
 	
@@ -207,5 +217,16 @@ $(function() {
 			$(".popup .warning").fadeIn(250);
 		}
     });
+
+	$(window).on("scroll", function(){
+		if(window.innerWidth <= 1200){ 
+			if ($(window).scrollTop() > 0) {
+				$(".header").addClass("scroll");
+			} else {
+				$(".header").removeClass("scroll");
+			}
+		}
+	});
+
 
 });

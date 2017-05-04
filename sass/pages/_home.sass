@@ -23,15 +23,31 @@
 			font-size: 190px
 			text-transform: uppercase
 			color: #f5b34d	
-			span
+			.first
+				background-image: linear-gradient(45deg, rgba(237,187,100,1) 0%, rgba(165,122,52,1) 100%)	
+				-webkit-background-clip: text
+				color: transparent
+			.second
 				display: block
 				font-size: 60px
 				font-family: 'ahronbd'
 				line-height: 1
+				font-weight: normal
+				background-image: linear-gradient(45deg, rgba(237,187,100,1) 0%, rgba(165,122,52,1) 100%)	
+				-webkit-background-clip: text
+				color: transparent
 		p
 			color: #fff
 			font-size: 18px
 			margin-bottom: 60px
+		.btn_down
+			display: none
+	> .btn_down
+		position: absolute
+		bottom: 50px
+		left: 50%
+		margin-left: -20px
+		z-index: 2
 
 .video_section
 	padding-top: 0 !important
