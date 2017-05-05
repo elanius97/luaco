@@ -81,7 +81,7 @@
 						&:last-child
 							margin-right: 0
 			.header_logo
-				margin-right: 9%
+				margin-right: 7%
 				width: 150px
 				img
 					width: 100%
@@ -123,6 +123,9 @@
 	.header
 		position: static
 		padding-top: 0
+		padding-bottom: 0
+		height: 0
+		z-index: 99
 		.header_desktop
 			display: none
 		.header_mobile
@@ -169,8 +172,19 @@
 					display: block
 
 	.video_section
+		height: 100vh
+		position: relative
+		.video_wrapper
+			#player
+				display: none
+			#mobile_frame
+				display: block
 		.player_overlay
 			display: none
+
+	.section
+		height: auto !important
+		min-height: 100vh
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
@@ -220,10 +234,12 @@
 
 	.number_one
 		padding-bottom: 20px
+		padding-top: 60px
 		.left_image
-			width: 320px
+			width: 225px
 			margin: 0 auto
-			position: static
+			position: relative
+			left: 15px
 			img
 				width: 100%
 		.right_image
@@ -287,6 +303,9 @@
 				text-align: left
 				font-size: 13px
 				line-height: 25px
+			> * 
+				position: relative
+				z-index: 1
 
 	.secret_coffee
 		padding-top: 75px

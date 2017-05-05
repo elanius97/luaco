@@ -10,30 +10,34 @@ $(function() {
 		});
 	};
 
-	$('.fullpage').fullpage({
-		responsive: 1024,
-		afterLoad: function(anchorLink, index){
-			//using index
-			if(index == 1 && ( window.location.pathname == "/" || window.location.pathname == "/index.html" || window.location.pathname == "/index.php") ){
-				$(".header_desktop .discover").css("display", "none");
-			}
-		},
-		onLeave: function(index, nextIndex, direction){
-			if(nextIndex != 1 && ( window.location.pathname == "/" || window.location.pathname == "/index.html" || window.location.pathname == "/index.php") ){
-				$(".header_desktop .discover").css("display", "inline-block");
-			}
-			else if(index == 2 && direction == 'up' && ( window.location.pathname == "/" || window.location.pathname == "/index.html" || window.location.pathname == "/index.php") ){
-				$(".header_desktop .discover").css("display", "none");
-			}
+	function initializationFullpage(){
+		$('.fullpage').fullpage({
+			responsive: 1024,
+			afterLoad: function(anchorLink, index){
+				//using index
+				if(index == 1 && ( window.location.pathname == "/" || window.location.pathname == "/index.html" || window.location.pathname == "/index.php") ){
+					$(".header_desktop .discover").css("display", "none");
+				}
+			},
+			onLeave: function(index, nextIndex, direction){
+				if(nextIndex != 1 && ( window.location.pathname == "/" || window.location.pathname == "/index.html" || window.location.pathname == "/index.php") ){
+					$(".header_desktop .discover").css("display", "inline-block");
+				}
+				else if(index == 2 && direction == 'up' && ( window.location.pathname == "/" || window.location.pathname == "/index.html" || window.location.pathname == "/index.php") ){
+					$(".header_desktop .discover").css("display", "none");
+				}
 
-			if (nextIndex != 1) {
-				$(".header").addClass("scroll");
-				player.playVideo();
-			} else if (index == 2) {
-				$(".header").removeClass("scroll");
+				if (nextIndex != 1) {
+					$(".header").addClass("scroll");
+					if($(".video_section").length){
+						player.playVideo();
+					}
+				} else if (index == 2) {
+					$(".header").removeClass("scroll");
+				}
 			}
-		}
-	});
+		});
+	}	
 
 
 	$(".btn_down").on("click", function(){
@@ -49,7 +53,6 @@ $(function() {
 	});
 
 	$(".video_section .video_play_wrap_in a").on("click", function(){
-		$(".video_section .video_wrapper iframe")[0].src += "&autoplay=1";
 		setTimeout(function(){
 			$(".video_section .video_wrapper").fadeIn(300)
 		}, 250);
@@ -219,6 +222,11 @@ $(function() {
 		}
     });
 
+	if(window.innerWidth >= 1024) {
+		initializationFullpage();
+	}
+
+
 	$(window).on("scroll", function(){
 		if(window.innerWidth >= 1200){ 
 			if ($(window).scrollTop() > 0) {
@@ -229,5 +237,10 @@ $(function() {
 		}
 	});
 
+	$(window).on("resize", function(){
+		if(window.innerWidth >= 1024) {
+			initializationFullpage();
+		}
+	});
 
 });
