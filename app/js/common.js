@@ -28,6 +28,7 @@ $(function() {
 
 			if (nextIndex != 1) {
 				$(".header").addClass("scroll");
+				player.playVideo();
 			} else if (index == 2) {
 				$(".header").removeClass("scroll");
 			}
