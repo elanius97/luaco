@@ -81,7 +81,7 @@
 						&:last-child
 							margin-right: 0
 			.header_logo
-				margin-right: 4%
+				margin-right: 9%
 				width: 150px
 				img
 					width: 100%
@@ -92,7 +92,6 @@
 		> .btn_down
 			bottom: 20px
 
-@media only screen and (max-width : 1450px)
 	.recepies
 		&_item
 			flex: 50%
@@ -101,12 +100,16 @@
 					display: block
 			&:nth-child(3n)
 				border-right: 1px solid #281818
+				padding-right: 35px
+			&:nth-child(3n + 1)
+				padding-left: 60px
 			&:nth-child(2n)
 				border-right: none
 				padding-right: 0
 			&:nth-child(2n + 1)
 				padding-left: 0
 
+@media only screen and (max-width : 1450px)
 	.contact
 		.adresses
 			&_item
@@ -160,6 +163,7 @@
 		&_item
 			flex: 100%
 			border-right: none !important
+			padding: 0 !important
 			&:nth-child(2)
 				&:before
 					display: block

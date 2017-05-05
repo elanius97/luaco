@@ -219,7 +219,7 @@ $(function() {
     });
 
 	$(window).on("scroll", function(){
-		if(window.innerWidth <= 1200){ 
+		if(window.innerWidth >= 1200){ 
 			if ($(window).scrollTop() > 0) {
 				$(".header").addClass("scroll");
 			} else {
