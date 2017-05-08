@@ -44,11 +44,14 @@ $(function() {
 		$.fn.fullpage.moveSectionDown();
 	});
 
-	$(".header_language li.active a").on("click", function(e){
+	var currentLanguage = $(".header_desktop .header_language li.active a").text();
+	$(".header_language .choosen_language span").text(currentLanguage);
+
+	$(".header_language .choosen_language").on("click", function(e){
 
 		e.preventDefault();
 		$(".header_language").toggleClass("open");
-		$(".header_language li:not(.active)").fadeToggle(250);
+		$(".header_language ul").slideToggle(250);
 
 	});
 

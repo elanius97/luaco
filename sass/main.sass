@@ -136,7 +136,7 @@ a
 						&:after
 							left: 0
 							width: 100%
-				&.active
+				&.current-menu-item
 					a
 						font-weight: 900
 						&:after
@@ -166,36 +166,44 @@ a
 		padding-right: 20px
 		cursor: pointer
 		margin-right: 6%
-		&:after
-			content: '\f078'
-			font-family: FontAwesome
-			position: absolute
-			right: 0
-			top: 0
-			color: #fff
-			font-size: 10px
-			line-height: 16px
-		li
-			display: none
-			position: absolute
-			top: 100%
-			left: 0
-			&:nth-child(2)
-				top: calc(100% + 5px)
-			&:nth-child(3)
-				top: calc(100% + 30px)
-			&.active
-				display: block
-				position: static
-			a
+		.choosen_language
+			span
 				font-size: 16px
 				color: #fff
 				text-decoration: none
 				line-height: 1
-				padding: 12px
-		&.open
+				padding: 5px
+				position: relative
+				display: inline-block
 			&:after
-				content: '\f077'
+				content: '\f078'
+				font-family: FontAwesome
+				position: absolute
+				right: 0
+				top: 0
+				color: #fff
+				font-size: 10px
+				line-height: 20px
+		ul
+			position: absolute
+			top: 100%
+			left: 0
+			display: none
+			li			
+				&.active
+					display: none
+				a
+					font-size: 16px
+					color: #fff
+					text-decoration: none
+					line-height: 1
+					padding: 5px
+					line-height: 1
+					display: block
+		&.open
+			.choosen_language
+				&:after
+					content: '\f077'
 	.header_mobile
 		text-align: center
 		display: none
@@ -206,8 +214,11 @@ a
 			position: absolute
 			top: 30px
 			right: 15px
-			&:after
-				line-height: 10px
+			.choosen_language
+				span
+					font-size: 10px
+				&:after
+					line-height: 17px
 			li
 				a
 					font-size: 10px
@@ -275,7 +286,7 @@ a
 							&:after
 								left: 0
 								width: 100%
-					&.active
+					&.current-menu-item
 						a
 							font-weight: 900
 							&:after
